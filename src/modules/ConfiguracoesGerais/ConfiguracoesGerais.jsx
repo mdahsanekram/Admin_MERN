@@ -1,11 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
+import Context from "../../components/Context";
 import { InputField, SubmitButton } from "../../components/FormElements";
 
 const ConfiguracoesGerais = () => {
     const [page, setPage] = useState(0);
+    const [context, setContext] = useContext(Context)
     const onCLick = () => {
         setPage(page + 1);
     }
+
+    useEffect(() => {
+        setContext(prevState => ({
+            ...prevState,
+            pageTitle: "Configuracoes Gerais"
+        }))
+    }, [])
     return (
         <>
 
@@ -77,7 +86,7 @@ const ConfiguracoesGerais = () => {
                                 name="fav_language"
                                 value="Validador de cupons"
                             />
-                            <label for="html">Validador de cupons</label> {" "}
+                            <label htmlFor="html">Validador de cupons</label> {" "}
                             <input
                                 type="radio"
                                 style={{ accentColor: "#12d76c" }}
@@ -90,7 +99,7 @@ const ConfiguracoesGerais = () => {
                         </fieldset>
                         <br />
                         <p style={{ textAlign: "center" }}>
-                            <i class="fa fa-plus"></i>
+                            <i className="fa fa-plus"></i>
                             <strong style={{ color: "black" }}>Adicionar outro</strong>{" "}
                         </p>
                         <center>
