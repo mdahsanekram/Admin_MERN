@@ -5,7 +5,6 @@ const ConfiguracoesGerais = () => {
     const [page, setPage] = useState(0);
     const onCLick = () => {
         setPage(page + 1);
-        console.log(page)
     }
     return (
         <>
@@ -25,6 +24,7 @@ const ConfiguracoesGerais = () => {
                             className="fa fa-chevron-left"
                             aria-hidden="true"
                             style={{ float: "left" }}
+                            onClick={()=>setPage(0)}
                         ></i>
                         Membrosss
                     </h3>
@@ -120,6 +120,7 @@ const ConfiguracoesGerais = () => {
                             className="fa fa-chevron-left"
                             aria-hidden="true"
                             style={{ float: "left" }}
+                            onClick={()=>setPage(page-1)}
                         ></i>
                         Dados Bancarios
                     </h3>
@@ -243,6 +244,7 @@ const ConfiguracoesGerais = () => {
                             className="fa fa-chevron-left"
                             aria-hidden="true"
                             style={{ float: "left" }}
+                            onClick={()=>setPage(page-1)}
                         ></i>
                         COmplemento
                     </h3>
